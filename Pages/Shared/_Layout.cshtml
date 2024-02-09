@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>@ViewData["Welcome"]</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class=page>
+        <h1>MiniTwit</h1>
+        <div class=navigation>
+            @if (User.Identity!.IsAuthenticated)
+            {
+                <div>
+                    <a href="/">my timeline</a> |
+                    <a href="/">public timeline</a> |
+                    <a href="/">signout</a> |
+                </div>
+            }
+            else
+            {
+                <div>
+                    <a href="/">public timeline</a> |
+                    <a href="/">sign up</a> |
+                    <a href="/">sign in</a>
+                </div>
+            }
+        </div>
+
+        <div class=body>
+            @RenderBody()
+        </div>
+        <div class=footer>
+            MiniTwit &mdash; A Flask Application (Soon C#/ .Net)
+        </div>
+    </div>
+
+</body>
+
+</html>
